@@ -1,7 +1,16 @@
-from django.urls import path
+from django.conf import settings
+from django.urls import path, include
 
-from .views import ItemView
+from .views import ItemView, AccountView
 
-urlpatterns = [
-    path('', ItemView.as_view()),
-]
+from rest_framework.routers import DefaultRouter, SimpleRouter
+
+if settings.DEBUG:
+    router = DefaultRouter()
+else:
+    router = SimpleRouter()
+
+router.register('items', ItemView, basename='items')
+router.register('accounts', AccountView, basename='accounts')
+
+urlpatterns = router.urls
