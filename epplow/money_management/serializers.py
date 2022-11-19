@@ -11,3 +11,13 @@ class AccountSerializer(serializers.ModelSerializer):
     class Meta:
         model = Account
         fields = '__all__'
+
+class AccountCodeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = AccountCode
+        fields = '__all__'
+
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = '__all__'

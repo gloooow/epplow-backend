@@ -16,3 +16,11 @@ class ItemView(viewsets.ModelViewSet):
 class AccountView(viewsets.ModelViewSet):
     serializer_class = AccountSerializer
     queryset = Account.objects.all()
+
+class AccountCodeView(viewsets.ModelViewSet):
+    serializer_class = AccountSerializer
+    queryset = AccountCode.objects.all()
+
+class CategoryView(viewsets.ModelViewSet):
+    serializer_class = AccountSerializer
+    queryset = Category.objects.all()
